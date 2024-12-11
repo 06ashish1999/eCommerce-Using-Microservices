@@ -14,6 +14,7 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection service)
     {
         service.Add(new ServiceDescriptor(typeof(IUsersRepository), typeof(UsersRepository), ServiceLifetime.Singleton));
+       
         return service;
     }
 }
