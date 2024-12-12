@@ -11,6 +11,9 @@ builder.Services.AddInfrastructure();
 // addin middlewares to the service
 builder.Services.AddTransient<ExceptionHandling>();
 
+// adding controllers as service
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 // exception handling
