@@ -13,7 +13,7 @@ public static class DependencyInjection
     /// <returns></returns>
     public static IServiceCollection AddInfrastructure(this IServiceCollection service)
     {
-        service.Add(new ServiceDescriptor(typeof(IUsersRepository), typeof(UsersRepository), ServiceLifetime.Singleton));
+        service.Add(new ServiceDescriptor(typeof(IUsersRepository), typeof(UsersRepository), ServiceLifetime.Transient));
        
         return service;
     }
