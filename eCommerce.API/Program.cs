@@ -1,5 +1,6 @@
 using eCommerce.API.Middlewares;
 using eCommerce.Core;
+using eCommerce.Core.Mappers;
 using eCommerce.Infrastructure;
 using System.Text.Json.Serialization;
 
@@ -18,6 +19,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     // by default asp.net unable to convert enum to string so we need to add converter
     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
+
+// adding auto mapper as service
+builder.Services.AddAutoMapper(typeof(ApplicationUserToAuthenticationResponseMapperProfile).Assembly);
 
 var app = builder.Build();
 
